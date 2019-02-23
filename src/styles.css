@@ -19,11 +19,51 @@ textarea {
   line-height: 1;
 }
 
+a {
+  color: #0074d9;
+  text-decoration: none;
+}
+
+.logo {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin: 60px 80px;
+  display: flex;
+}
+
+.language-select-label {
+  margin-right: 20px;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: gray;
+}
+
+.main-header {
+  margin: 60px 80px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+}
+
 .repos-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin: 40px 0px;
+}
+
+.repos-count {
+  margin-left: 35px;
+  margin-right: 20px;
+  color: gray;
+}
+
+.reload-btn {
+  color: #0074d9;
+  cursor: pointer;
 }
 
 .item {
@@ -37,11 +77,17 @@ textarea {
   border-radius: 3px;
 }
 
-.header {
+.item-first-line {
   display: flex;
   align-items: center;
   margin-bottom: 2px;
   width: 100%;
+}
+
+.item-second-line {
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
 }
 
 .header-left {
@@ -75,13 +121,13 @@ textarea {
   color: gray;
 }
 
-.language {
+.lang {
   font-size: 13px;
   margin-right: 10px;
   padding: 0px 5px;
 }
 
-.lang-dot {
+.lang-color {
   height: 13px;
   width: 13px;
   margin-right: 2px;
