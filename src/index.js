@@ -131,7 +131,7 @@ class App extends Component {
         <div className="item-first-line">
           <a
             className="repo"
-            href={`${Config.baseURL}/${repo}`}
+            href={`https://github.com/${repo}`}
             target="_blank"
           >
             {repo}
