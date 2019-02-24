@@ -29,23 +29,32 @@ a {
   color: black;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  margin: 60px 80px;
-  display: flex;
+  margin: 20px 80px 40px;
+  display: inline-block;
 }
 
-.language-select-label {
-  margin-right: 20px;
+.lang-select-label {
   letter-spacing: 0.05rem;
   text-transform: uppercase;
   font-size: 13px;
   color: gray;
+  margin: 10px 0px;
+  margin-right: 20px;
+}
+
+.select-lang {
+  width: 250px;
+  margin: 10px 0px;
+  margin-right: 30px;
+  cursor: pointer;
 }
 
 .main-header {
-  margin: 60px 80px;
+  margin: 30px 80px;
   font-size: 13px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .repos-container {
@@ -56,7 +65,7 @@ a {
 }
 
 .repos-count {
-  margin-left: 35px;
+  margin: 10px 0px;
   margin-right: 20px;
   color: gray;
 }
@@ -68,10 +77,6 @@ a {
 
 .item {
   width: calc(100% - 160px);
-  overflow-x: scroll;
-  box-sizing: border-box;
-  overflow-y: hidden;
-  height: 80px;
   margin-bottom: 5px;
   padding: 20px 0px;
   border-radius: 3px;
@@ -79,13 +84,13 @@ a {
 
 .item-first-line {
   display: flex;
-  align-items: center;
-  margin-bottom: 2px;
+  align-items: flex-start;
+  margin-bottom: 5px;
   width: 100%;
 }
 
 .item-second-line {
-  margin-top: 2px;
+  margin-top: 6px;
   display: flex;
   align-items: center;
 }
@@ -102,9 +107,9 @@ a {
   text-transform: none;
   text-decoration: none;
   color: #0074d9;
-  border-bottom: 4px solid;
+  margin-right: 10px;
   border-color: transparent;
-  max-width: 70%;
+  max-width: calc(100% - 60px);
   word-break: break-all;
 }
 
@@ -115,7 +120,6 @@ a {
 }
 
 .desc {
-  padding-left: 10px;
   font-size: 14px;
   line-height: 16px;
   color: gray;
@@ -135,10 +139,6 @@ a {
   background-color: gray;
 }
 
-.select-lang {
-  width: 250px;
-}
-
 .cache-state {
   color: gray;
   background-color: whitesmoke;
@@ -146,11 +146,6 @@ a {
   margin-right: 5px;
   font-size: 12px;
   border-radius: 3px
-}
-
-.cache-state.cached {
-  color: #1b791b;
-  background-color: #e9f9d1;
 }
 
 /* --------- languages --------- */

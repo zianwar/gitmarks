@@ -14,7 +14,7 @@ const Config = {
 }
 
 class App extends Component {
-  _key = null
+  _cachekey = null
 
   state = {
     data: [],
@@ -38,11 +38,11 @@ class App extends Component {
       });
     }
 
-    this._key = `_gitmarks_.${username}`;
-    console.log('User key:', this._key);
+    this._cachekey = `_gitmarks_.${username}`;
+    console.log('User key:', this._cachekey);
 
     this.setState({ username }, () => {
-      const str = localStorage.getItem(this._key);
+      const str = localStorage.getItem(this._cachekey);
       let json = null;
 
       try {
@@ -136,16 +136,16 @@ class App extends Component {
           >
             {repo}
           </a>
-          <span className="desc" title={desc}>
-            {desc}
-          </span>
+          <div className="stars" title={`${stars} stars`}>
+            {stars} ★
+          </div>
+        </div>
+        <div className="desc" title={desc}>
+          {desc}
         </div>
         <div className="item-second-line">
           {lang && <div className={`lang-color ${lang}`}/>}
           {lang && <div className={`lang`}>{lang}</div>}
-          <div className="stars" title={`${stars} stars`}>
-            {stars} ★
-          </div>
         </div>
       </div>
     );
@@ -164,7 +164,7 @@ class App extends Component {
   }
 
   handleReloadClick() {
-    localStorage.removeItem(this._key);
+    localStorage.removeItem(this._cachekey);
     this.setState({
       loading: true,
       data: [],
@@ -174,7 +174,7 @@ class App extends Component {
 
   cacheData() {
     const cache = { data: this.state.data };
-    localStorage.setItem(this._key, JSON.stringify(cache));
+    localStorage.setItem(this._cachekey, JSON.stringify(cache));
     console.log('Cached data to localStorage', cache);
   }
 
@@ -215,13 +215,13 @@ class App extends Component {
     const filtered = this.applyFiler(data);
 
     return (
-      <div style={{ marginTop: '70px' }}>
+      <div style={{ marginTop: '40px' }}>
         <a href="/" className="logo">
           Gitmarks
         </a>
         {!error &&
           <div className="main-header">
-            <div className="language-select-label">
+            <div className="lang-select-label">
               Language
             </div>
             <Select
@@ -243,7 +243,7 @@ class App extends Component {
             />
             <div className="repos-count">{filtered.length} repositories</div>
             <div>
-              {cached && <span className="cache-state cached">cached</span>}
+              {cached && <span className="cache-state">cached</span>}
               {cached && <span className="reload-btn" onClick={() => this.handleReloadClick()}>Reload</span>}
             </div>
           </div>}
