@@ -1,8 +1,9 @@
 {
-  "name": "new",
+  "name": "gitmarks",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "description": "Github bookmarks - Easily find what you starred in GitHub https://gitmarks.netlify.com",
+  "keywords": ["github bookmarks", "github stars", "github starred", "starred", "github"],
+  "author": "Anwar Ziani <anwaar.ziani@gmail.com>",
   "main": "src/index.js",
   "dependencies": {
     "lodash": "4.17.11",
